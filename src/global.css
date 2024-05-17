@@ -35,10 +35,11 @@ h6 {
 }
 
 body {
-  background-image: url("lucasinthestudio.png");
-  background-repeat: no-repeat;
+  background-image: url(lucasinthestudio.png);
   background-size: cover;
-  overflow: hidden;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  background-attachment: fixed;
 }
 
 .frontpage {
@@ -67,4 +68,12 @@ h1 {
   font-weight: 200;
   font-size: 1.5rem;
   text-align: center;
+}
+
+.recentprojects {
+  max-width: 100%;
+}
+
+.spotifyplaylist {
+  margin-top: 8rem;
 }
