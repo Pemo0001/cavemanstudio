@@ -1,0 +1,59 @@
+---
+import "../global.css";
+---
+
+<div id="sidebar">
+  <div class="toggle-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul>
+    <li>The studio</li>
+    <li>About Lucas</li>
+    <li>Let's talk</li>
+  </ul>
+</div>
+
+<script>
+  const sidebar = document.getElementById("sidebar");
+
+  sidebar.addEventListener("click", function () {
+    sidebar.classList.toggle("active");
+  });
+</script>
+
+<style>
+  #sidebar {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    background: var(--secondary);
+    right: -300px;
+    transition: 0.4s;
+  }
+
+  #sidebar.active {
+    right: 0;
+  }
+
+  #sidebar ul li {
+    list-style: none;
+    color: var(--primary);
+    padding: 2rem;
+  }
+
+  #sidebar .toggle-btn {
+    position: absolute;
+    top: 30px;
+    right: 330px;
+  }
+
+  .toggle-btn span {
+    width: 45px;
+    height: 4px;
+    background: var(--primary);
+    display: block;
+    margin-top: 4px;
+  }
+</style>
