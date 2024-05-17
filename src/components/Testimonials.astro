@@ -1,0 +1,75 @@
+---
+
+---
+
+<div class="testimonial-container">
+  <button id="prev-btn"><img src="backbutton.svg" /></button>
+  <div class="testimonialflex">
+    <h3 id="testimonial"></h3>
+    <p id="author"></p>
+  </div>
+  <button id="next-btn"><img src="forwardbutton.svg" /></button>
+</div>
+
+<script>
+  const testimonials = [
+    { text: "I couldn't be happier with the results!", author: "John Doe" },
+    { text: "Amazing service! Highly recommended.", author: "Jane Smith" },
+    { text: "The best decision I've ever made!", author: "Bob Johnson" },
+  ];
+  let currentTestimonial = 0;
+
+  const testimonialElem = document.getElementById("testimonial");
+  const authorElem = document.getElementById("author");
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
+
+  function showTestimonial() {
+    testimonialElem.innerText = testimonials[currentTestimonial].text;
+    authorElem.innerText = testimonials[currentTestimonial].author;
+  }
+  function prevTestimonial() {
+    currentTestimonial = currentTestimonial === 0 ? testimonials.length - 1 : currentTestimonial - 1;
+    showTestimonial();
+  }
+  function nextTestimonial() {
+    currentTestimonial = currentTestimonial === testimonials.length - 1 ? 0 : currentTestimonial + 1;
+    showTestimonial();
+  }
+
+  prevBtn.addEventListener("click", prevTestimonial);
+  nextBtn.addEventListener("click", nextTestimonial);
+
+  showTestimonial();
+</script>
+
+<style>
+  .testimonial-container {
+    background-image: url(backgroundtexture.jpg);
+    color: #fff;
+    text-align: center;
+    padding: 8rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  #testimonial {
+    font-size: 2rem;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  #author {
+    font-size: 1rem;
+  }
+  #prev-btn,
+  #next-btn {
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  button {
+    background: none;
+  }
+</style>

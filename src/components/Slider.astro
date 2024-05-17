@@ -1,0 +1,98 @@
+<div class="slider-wrap" id="slider-wrap">
+  <div class="slider" id="slider">
+    <div class="slider-item">
+      <div class="img-div">
+        <img src="lucasalbum1.jpg" />
+      </div>
+    </div>
+    <div class="slider-item">
+      <div class="img-div">
+        <img src="lucasalbum2.jpg" />
+      </div>
+    </div>
+    <div class="slider-item">
+      <div class="img-div">
+        <img src="helsingborg.jpg" />
+      </div>
+    </div>
+    <div class="slider-item">
+      <div class="img-div">
+        <img src="tidemand.jpg" />
+      </div>
+    </div>
+    <div class="slider-item">
+      <div class="img-div">
+        <img src="juanpablo.jpg" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const sliderWrap = document.getElementById("slider-wrap");
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  sliderWrap.addEventListener("mousedown", (e) => {
+    isDown = true;
+    sliderWrap.classList.add("active");
+    startX = e.pageX - sliderWrap.offsetLeft;
+    scrollLeft = sliderWrap.scrollLeft;
+  });
+
+  sliderWrap.addEventListener("mouseleave", () => {
+    isDown = false;
+    sliderWrap.classList.remove("active");
+  });
+
+  sliderWrap.addEventListener("mouseup", () => {
+    isDown = false;
+    sliderWrap.classList.remove("active");
+  });
+
+  sliderWrap.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - sliderWrap.offsetLeft;
+    const walk = (x - startX) * 3; // scroll-fast
+    sliderWrap.scrollLeft = scrollLeft - walk;
+  });
+
+  // Prevent default image dragging behavior
+  const images = document.querySelectorAll(".slider img");
+  images.forEach((img) => {
+    img.addEventListener("mousedown", (e) => {
+      e.preventDefault();
+    });
+  });
+</script>
+
+<style>
+  .slider-wrap {
+    overflow-x: scroll;
+    margin-top: 3rem;
+    margin-left: 1rem;
+    cursor: grab;
+  }
+
+  .slider {
+    width: fit-content;
+    display: flex;
+    cursor: move;
+  }
+
+  .slider-item {
+    overflow: hidden;
+    margin-right: 30px;
+  }
+
+  .img-div {
+    width: 300px;
+    height: 300px;
+  }
+
+  .slider-wrap:active {
+    cursor: grabbing;
+  }
+</style>
