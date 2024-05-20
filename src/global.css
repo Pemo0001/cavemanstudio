@@ -35,7 +35,7 @@ h6 {
 }
 
 body {
-  background-color: var(--primary);
+  background-image: url(background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   overflow-x: hidden;
