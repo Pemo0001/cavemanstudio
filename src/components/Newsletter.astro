@@ -1,0 +1,51 @@
+---
+
+---
+
+<section class="newsletter">
+  <h2>FRIENDS?</h2>
+  <p>Sign-up to my newsletter to get info about projects and upcoming events! Don’t worry, it won’t be spam :)</p>
+  <form action="/submit_form" method="post">
+    <div class="forminputs">
+      <input type="text" id="name" name="name" placeholder="Name" required />
+      <input type="email" id="email" name="email" placeholder="Email" required />
+    </div>
+    <div class="formbutton">
+      <button type="submit">Sign-Up!</button>
+    </div>
+  </form>
+</section>
+
+<style>
+  .newsletter {
+    background-image: url(backgroundtexture.jpg);
+    padding: 5rem;
+    text-align: center;
+  }
+
+  h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 2rem;
+  }
+
+  form {
+    border: 2px solid var(--primary);
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+  }
+
+  input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    color: #fff;
+    margin: 3rem;
+    font-size: 1.1rem;
+  }
+</style>
