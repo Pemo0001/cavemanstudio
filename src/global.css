@@ -44,7 +44,7 @@ body {
 
 .frontpage {
   max-width: 100%;
-  height: 750px;
+  height: 900px;
   background-image: url("heroimage-cleaned.jpg");
   background-size: cover;
 }
