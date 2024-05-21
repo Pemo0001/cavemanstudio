@@ -1,0 +1,42 @@
+---
+
+---
+
+<section class="aboutlucas">
+  <div class="aboutlucasgrid">
+    <div class="gridleft">
+      <img src="tidemand.jpg" alt="aboutlucas" />
+    </div>
+    <div class="gridright">
+      <h2>ABOUT LUCAS</h2>
+      <p>The studio is located in an old war bungalow in the outskirts of Frederiksberg etc.</p>
+      <button>READ MORE</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .aboutlucas {
+    background-color: var(--primary);
+    padding: 5rem 2rem;
+  }
+
+  .aboutlucasgrid {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .aboutlucasgrid img {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 880px) {
+    .aboutlucasgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+</style>
