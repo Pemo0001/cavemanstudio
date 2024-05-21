@@ -45,7 +45,7 @@ body {
 .frontpage {
   max-width: 100%;
   height: 750px;
-  background-image: url("heroimage-cleaned.webp");
+  background-image: url("heroimage-cleaned.jpg");
   background-size: cover;
 }
 
