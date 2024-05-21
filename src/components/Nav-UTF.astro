@@ -1,0 +1,58 @@
+---
+import "../global.css";
+---
+
+<section id="nav-UTF">
+  <div>
+    <ul>
+      <li><a href="Studio.astro">THE STUDIO</a></li>
+      <li id="bordered-li-item"><a href="About.astro">ABOUT LUCAS</a></li>
+      <li><a href="Contact.astro">LET'S TALK</a></li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  #nav-UTF {
+    color: var(--accent1);
+    font-family: "Helvetica Neue", sans-serif;
+    box-sizing: border-box;
+    font-weight: 500;
+  }
+
+  #nav-UTF ul li a:hover {
+    color: var(--primary);
+    cursor: pointer;
+    style
+  }
+
+  #nav-UTF ul li a{
+    color: var(--accent1);
+    text-decoration: none;
+  }
+
+  #nav-UTF ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+  }
+
+  #nav-UTF li {
+    display: flex;
+    margin-top: 8rem;
+    list-style: none;
+    padding: 12px;
+  }
+
+  #bordered-li-item {
+    border-left: 2px solid var(--accent1);
+    border-right: 2px solid var(--accent1);
+  }
+
+  @media screen and (max-width: 390px) {
+  #nav-UTF ul li{
+    display: none;
+  }
+  }
+</style>
