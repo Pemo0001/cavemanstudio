@@ -8,6 +8,7 @@
   text-decoration: none;
   color: #6a5142;
   letter-spacing: 0.3rem;
+  font-size: 0.9rem;
 }
 
 .backbutton {
@@ -23,7 +24,7 @@
 
 .subpagesubtext {
   max-width: 450px;
-  margin: 0 auto;
+  margin: 0 auto 3rem auto;
 }
 
 .subpageh2 {
@@ -47,5 +48,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 200px;
+    padding: 0 3rem 0 3rem;
   }
 }
