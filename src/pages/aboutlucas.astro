@@ -1,0 +1,32 @@
+---
+import "../subpages.css";
+import Layout from "../layouts/Layout.astro";
+import Subpagemenu from "../components/Subpagemenu.astro";
+import Contactcard from "../components/Contactcard.astro";
+import Aboutlucasslider from "../components/Aboutlucasslider.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="About Lucas">
+  <Subpagemenu />
+  <section class="subpage">
+    <div class="backbutton">
+      <a class="back" href="index.html"><center>&lt; BACK</center></a>
+    </div>
+    <h1 class="subpageheader">About Lucas</h1>
+    <p class="subpagesubtext">My name is Lucas Delacroix. I was born in Buenos Aires, Argentina in 1991, and moved to Copenhagen in 2019. Music has been a huge part of my life since I can remember. I started playing guitar when I was ten years old, and have never stopped playing.</p>
+    <div class="subpagegrid_1_1">
+      <div class="grid_1_1">
+        <h2 class="subpageh2">Influences</h2>
+        <p>From early on I got my influences from music like Elliott Smith, Nick Drake and The Beatles, and also from Argentinian artists such as Atahualpa Yupanqui and Luis Alberto Spinetta, getting as a result a wide mixture of sonic landscapes in my playing and note choices. Other influences are, for example, Sparklehorse, Tom Waits, Alain Johannes.</p>
+      </div>
+      <div class="grid_1_1">
+        <p class="quote">"I really enjoy listening, and creating, music with a wide variety of textures and sounds."</p>
+      </div>
+    </div>
+    <Aboutlucasslider />
+    <p class="quote">"I thrive on good melodies and interesting chord progressions."</p>
+    <Contactcard />
+  </section>
+  <Footer />
+</Layout>

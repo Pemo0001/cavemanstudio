@@ -1,0 +1,50 @@
+.subpage {
+  background-color: var(--secondary);
+  padding: 2rem;
+}
+
+.back {
+  text-decoration: none;
+  color: #6a5142;
+  letter-spacing: 0.3rem;
+}
+
+.backbutton {
+  margin-bottom: 2rem;
+}
+
+.subpageheader {
+  font-size: 3rem;
+  color: #fff;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.subpagesubtext {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.subpageh2 {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-top: 3rem;
+}
+
+.quote {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: bold;
+  line-height: 2.4rem;
+  margin: 3rem 0;
+}
+
+@media screen and (min-width: 880px) {
+  .subpagegrid_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 200px;
+  }
+}

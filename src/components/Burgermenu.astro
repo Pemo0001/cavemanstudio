@@ -9,81 +9,81 @@ import "../global.css";
     <span class="bar"></span>
   </div>
   <ul>
-    <li>The studio</li>
-    <li>About Lucas</li>
-    <li>Let's talk</li>
+    <li><a href="thestudio.html">The studio</a></li>
+    <li><a href="aboutlucas.html">About Lucas</a></li>
+    <li><a href="letstalk.html">Let's talk</a></li>
   </ul>
+
+  <script>
+    const sidebar = document.getElementById("sidebar");
+
+    sidebar.addEventListener("click", function () {
+      sidebar.classList.toggle("active");
+    });
+
+    const toggleBtn = document.getElementById("toggle-btn");
+
+    toggleBtn.addEventListener("click", function () {
+      toggleBtn.classList.toggle("active");
+    });
+  </script>
+
+  <style>
+    #sidebar {
+      position: absolute;
+      width: 300px;
+      height: 100%;
+      background: var(--secondary);
+      right: -300px;
+      transition: 0.4s;
+      z-index: 1;
+    }
+
+    #sidebar.active {
+      right: 0;
+    }
+
+    #sidebar ul li {
+      list-style: none;
+      color: var(--primary);
+      padding: 2rem;
+    }
+
+    #sidebar .toggle-btn {
+      position: absolute;
+      top: 30px;
+      right: 330px;
+      cursor: pointer;
+    }
+
+    .toggle-btn span {
+      width: 45px;
+      height: 2px;
+      background: var(--primary);
+      display: block;
+      margin-top: 8px;
+    }
+
+    /* Base styles for the bars */
+    .bar {
+      display: block;
+      width: 35px;
+      height: 4px;
+      margin: 6px auto;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Styles for when the toggle button is active */
+    .toggle-btn.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .toggle-btn.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .toggle-btn.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+  </style>
 </div>
-
-<script>
-  const sidebar = document.getElementById("sidebar");
-
-  sidebar.addEventListener("click", function () {
-    sidebar.classList.toggle("active");
-  });
-
-  const toggleBtn = document.getElementById("toggle-btn");
-
-  toggleBtn.addEventListener("click", function () {
-    toggleBtn.classList.toggle("active");
-  });
-</script>
-
-<style>
-  #sidebar {
-    position: absolute;
-    width: 300px;
-    height: 100%;
-    background: var(--secondary);
-    right: -300px;
-    transition: 0.4s;
-    z-index: 1;
-  }
-
-  #sidebar.active {
-    right: 0;
-  }
-
-  #sidebar ul li {
-    list-style: none;
-    color: var(--primary);
-    padding: 2rem;
-  }
-
-  #sidebar .toggle-btn {
-    position: absolute;
-    top: 30px;
-    right: 330px;
-    cursor: pointer;
-  }
-
-  .toggle-btn span {
-    width: 45px;
-    height: 2px;
-    background: var(--primary);
-    display: block;
-    margin-top: 8px;
-  }
-
-  /* Base styles for the bars */
-  .bar {
-    display: block;
-    width: 35px;
-    height: 4px;
-    margin: 6px auto;
-    transition: all 0.3s ease-in-out;
-  }
-
-  /* Styles for when the toggle button is active */
-  .toggle-btn.active .bar:nth-child(1) {
-    transform: rotate(45deg) translate(7px, 7px);
-  }
-
-  .toggle-btn.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .toggle-btn.active .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
-  }
-</style>

@@ -1,0 +1,29 @@
+---
+import "../subpages.css";
+import Layout from "../layouts/Layout.astro";
+import Subpagemenu from "../components/Subpagemenu.astro";
+import Contactcard from "../components/Contactcard.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="The Studio">
+  <Subpagemenu />
+  <section class="subpage">
+    <div class="backbutton">
+      <a class="back" href="index.html"><center>&lt; BACK</center></a>
+    </div>
+    <h1 class="subpageheader">The Studio</h1>
+    <p class="subpagesubtext">Caveman Studio is located in a cozy, underground bunker in Copenhagen. This intimate setup is ideal for diving intro the creative process.</p>
+    <div class="subpagegrid_1_1">
+      <div class="grid_1_1">
+        <h2 class="subpageh2">HOW DOES IT WORK?</h2>
+        <p>I enjoy creating sonic landscapes with organic sounding guitars, banjos, mellotron arrangements, and whatever instrument I can get my hands on. I can help you bring to life that idea of a song you once had but never got to creating. You can hire me for producing, mixing, or recording instruments on your tracks. I work both remotely and one-on-one, so there is no need for you to be in Copenhagen for us to be able to work together.</p>
+      </div>
+      <div class="grid_1_1">
+        <p class="quote">"I really enjoy listening, and creating, music with a wide variety of textures and sounds."</p>
+      </div>
+    </div>
+    <Contactcard />
+  </section>
+  <Footer />
+</Layout>
