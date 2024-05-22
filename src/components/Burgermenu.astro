@@ -3,10 +3,10 @@ import "../global.css";
 ---
 
 <div id="sidebar">
-  <div class="toggle-btn">
-    <span></span>
-    <span></span>
-    <span></span>
+  <div class="toggle-btn" id="toggle-btn">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
   </div>
   <ul>
     <li>The studio</li>
@@ -20,6 +20,12 @@ import "../global.css";
 
   sidebar.addEventListener("click", function () {
     sidebar.classList.toggle("active");
+  });
+
+  const toggleBtn = document.getElementById("toggle-btn");
+
+  toggleBtn.addEventListener("click", function () {
+    toggleBtn.classList.toggle("active");
   });
 </script>
 
@@ -57,5 +63,27 @@ import "../global.css";
     background: var(--primary);
     display: block;
     margin-top: 8px;
+  }
+
+  /* Base styles for the bars */
+  .bar {
+    display: block;
+    width: 35px;
+    height: 4px;
+    margin: 6px auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Styles for when the toggle button is active */
+  .toggle-btn.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+
+  .toggle-btn.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .toggle-btn.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
   }
 </style>
