@@ -1,6 +1,7 @@
 .subpage {
   background-color: var(--secondary);
   padding: 2rem;
+  border-bottom: 1px solid var(--primary);
 }
 
 .back {

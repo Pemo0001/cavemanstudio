@@ -34,6 +34,7 @@ h6 {
   font-weight: 400;
   font-style: normal;
   font-size: 5rem;
+  color: var(--secondary);
 }
 
 a {
@@ -41,9 +42,8 @@ a {
 }
 
 body {
-  background-color: var(--primary);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: rgb(234, 141, 85);
+  background: linear-gradient(180deg, rgba(234, 141, 85, 1) 44%, rgba(129, 76, 45, 1) 76%);
   overflow-x: hidden;
   background-attachment: fixed;
   height: 150vh;
@@ -91,6 +91,7 @@ h2 {
 
 .recentprojectstitle {
   margin: 5rem 1rem 0 1rem;
+  text-align: center;
 }
 
 .spotifyplaylist {
