@@ -1,0 +1,37 @@
+---
+import "../global.css";
+const { variant } = Astro.props;
+---
+
+<button class={variant}><slot /></button>
+
+<style>
+  button {
+    color: #fff;
+    padding: 10px 70px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  button:hover {
+    background-color: #2a2a2a;
+  }
+
+  .primary {
+    background-color: var(--primary);
+  }
+
+  .primary:hover {
+    background-color: #2a2a2a;
+  }
+
+  .secondary {
+    background-color: var(--secondary);
+  }
+
+  .secondary:hover {
+    background-color: #2a2a2a;
+  }
+</style>

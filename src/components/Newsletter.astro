@@ -1,5 +1,5 @@
 ---
-
+import Button from "./Button.astro";
 ---
 
 <section class="newsletter">
@@ -11,7 +11,7 @@
       <input type="email" id="email" name="email" placeholder="Email" required />
     </div>
     <div class="formbutton">
-      <button type="submit">Sign-Up!</button>
+      <Button class="signupbutton" variant="primary">SIGN UP!</Button>
     </div>
   </form>
 </section>
@@ -45,7 +45,7 @@
     border: none;
     border-bottom: 1px solid var(--primary);
     color: #fff;
-    margin: 3rem;
+    margin: 3rem 3rem 1rem 3rem;
     font-size: 1.1rem;
   }
 </style>
