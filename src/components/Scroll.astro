@@ -1,0 +1,38 @@
+<div class="scroll-down-arrow"></div>
+
+<script>
+  document.querySelector(".scroll-down-arrow").addEventListener("click", function () {
+    document.querySelector("#target-section").scrollIntoView({ behavior: "smooth" });
+  });
+</script>
+
+<style>
+  .scroll-down-arrow {
+    position: absolute;
+    bottom: 70px;
+    left: 48%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 3px solid #ea8d55;
+    border-right: 3px solid #ea8d55;
+    transform: rotate(45deg);
+    animation: arrow 1.3s infinite;
+  }
+
+  @keyframes arrow {
+    0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-10px, -10px);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(10px, 10px);
+    }
+  }
+</style>

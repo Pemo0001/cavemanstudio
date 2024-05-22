@@ -10,6 +10,7 @@ import Contactform from "../components/Contactform.astro";
 import Thestudio from "../components/Thestudio.astro";
 import Aboutlucas from "../components/Aboutlucas.astro";
 import Contactcard from "../components/Contactcard.astro";
+import Scroll from "../components/Scroll.astro";
 ---
 
 <Layout title="Caveman Studio">
@@ -20,10 +21,12 @@ import Contactcard from "../components/Contactcard.astro";
       <h1>CAVEMAN STUDIO</h1>
       <h2 class="keywords">raw analog organic</h2>
     </div>
+    <Scroll />
     <NavUTF />
   </section>
   <section class="recentprojects">
     <h2 class="recentprojectstitle">Recent projects</h2>
+    <div id="target-section"></div>
     <Slider />
     <center>
       <iframe class="spotifyplaylist" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xGMxzRKGeCj?utm_source=generator&theme=0" width="75%" height="500" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
