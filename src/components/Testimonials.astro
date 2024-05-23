@@ -11,108 +11,108 @@ import Button from "./Button.astro";
     </div>
     <button id="next-btn"><img src="forwardbutton.svg" /></button>
   </div>
-
-  <script>
-    const testimonials = [
-      { text: "Lucas works well with references but also has a creative and engaging ear beyond that.", author: "Nora Quinn" },
-      { text: "We have always felt inspired and safe working with Lucas.", author: "Maria & Thomas, When Moons Align" },
-      { text: "His homely bunker-turned-studio is the perfect safe space to let your songs grow into records.", author: "Emil Jantzen, Tidemand" },
-    ];
-    let currentTestimonial = 0;
-
-    const testimonialElem = document.getElementById("testimonial");
-    const authorElem = document.getElementById("author");
-    const prevBtn = document.getElementById("prev-btn");
-    const nextBtn = document.getElementById("next-btn");
-
-    function showTestimonial() {
-      testimonialElem.classList.remove("active");
-      authorElem.classList.remove("active");
-
-      setTimeout(() => {
-        testimonialElem.innerText = testimonials[currentTestimonial].text;
-        authorElem.innerText = testimonials[currentTestimonial].author;
-
-        testimonialElem.classList.add("active");
-        authorElem.classList.add("active");
-      }, 500); // Match the duration of the CSS transition
-    }
-
-    function prevTestimonial() {
-      currentTestimonial = currentTestimonial === 0 ? testimonials.length - 1 : currentTestimonial - 1;
-      showTestimonial();
-    }
-
-    function nextTestimonial() {
-      currentTestimonial = currentTestimonial === testimonials.length - 1 ? 0 : currentTestimonial + 1;
-      showTestimonial();
-    }
-
-    prevBtn.addEventListener("click", prevTestimonial);
-    nextBtn.addEventListener("click", nextTestimonial);
-
-    showTestimonial();
-
-    // Automatic slide
-    setInterval(nextTestimonial, 5500); // Change slide every 3 seconds
-  </script>
-
-  <style>
-    .testimonials {
-      background-image: url(backgroundtexture.jpg);
-      height: 450px;
-    }
-    .testimonial-container {
-      color: #fff;
-      text-align: center;
-      display: grid;
-      grid-template-columns: 1fr 3fr 1fr;
-      gap: 2rem;
-      padding: 0 2rem 0 2rem;
-      height: 100%;
-      align-items: center;
-    }
-    #testimonial {
-      font-size: 2rem;
-      font-family: "Helvetica Neue", sans-serif;
-      font-weight: bold;
-      font-style: italic;
-      margin-bottom: 1rem;
-      color: #fff;
-    }
-    #author {
-      font-size: 1rem;
-    }
-    #prev-btn,
-    #next-btn {
-      border: none;
-      text-decoration: none;
-      cursor: pointer;
-      scale: calc(50%);
-    }
-
-    #next-btn {
-      margin-left: auto;
-    }
-
-    #prev-btn {
-      margin-right: auto;
-    }
-
-    button {
-      background: none;
-    }
-
-    .slide {
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .slide.active {
-      opacity: 1;
-    }
-
-    @media only screen and (min-width: 750px) {
-    }
-  </style>
 </section>
+
+<script>
+  const testimonials = [
+    { text: "Lucas works well with references but also has a creative and engaging ear beyond that.", author: "Nora Quinn" },
+    { text: "We have always felt inspired and safe working with Lucas.", author: "Maria & Thomas, When Moons Align" },
+    { text: "His homely bunker-turned-studio is the perfect safe space to let your songs grow into records.", author: "Emil Jantzen, Tidemand" },
+  ];
+  let currentTestimonial = 0;
+
+  const testimonialElem = document.getElementById("testimonial");
+  const authorElem = document.getElementById("author");
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
+
+  function showTestimonial() {
+    testimonialElem.classList.remove("active");
+    authorElem.classList.remove("active");
+
+    setTimeout(() => {
+      testimonialElem.innerText = testimonials[currentTestimonial].text;
+      authorElem.innerText = testimonials[currentTestimonial].author;
+
+      testimonialElem.classList.add("active");
+      authorElem.classList.add("active");
+    }, 500); // Match the duration of the CSS transition
+  }
+
+  function prevTestimonial() {
+    currentTestimonial = currentTestimonial === 0 ? testimonials.length - 1 : currentTestimonial - 1;
+    showTestimonial();
+  }
+
+  function nextTestimonial() {
+    currentTestimonial = currentTestimonial === testimonials.length - 1 ? 0 : currentTestimonial + 1;
+    showTestimonial();
+  }
+
+  prevBtn.addEventListener("click", prevTestimonial);
+  nextBtn.addEventListener("click", nextTestimonial);
+
+  showTestimonial();
+
+  // Automatic slide
+  setInterval(nextTestimonial, 5500); // Change slide every 3 seconds
+</script>
+
+<style>
+  .testimonials {
+    background-image: url(backgroundtexture.jpg);
+    height: 450px;
+  }
+  .testimonial-container {
+    color: #fff;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    gap: 2rem;
+    padding: 0 2rem 0 2rem;
+    height: 100%;
+    align-items: center;
+  }
+  #testimonial {
+    font-size: 2rem;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  #author {
+    font-size: 1rem;
+  }
+  #prev-btn,
+  #next-btn {
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    scale: calc(50%);
+  }
+
+  #next-btn {
+    margin-left: auto;
+  }
+
+  #prev-btn {
+    margin-right: auto;
+  }
+
+  button {
+    background: none;
+  }
+
+  .slide {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .slide.active {
+    opacity: 1;
+  }
+
+  @media only screen and (min-width: 750px) {
+  }
+</style>

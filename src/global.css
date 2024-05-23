@@ -62,6 +62,10 @@ body {
   z-index: 0;
 }
 
+.frontpagecontent a {
+  text-decoration: none;
+}
+
 .logo {
   margin: 0 auto;
 }

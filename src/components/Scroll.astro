@@ -1,12 +1,21 @@
-<div class="scroll-down-arrow"></div>
+<div class="link">
+  <div class="scroll-down-arrow"></div>
+</div>
 
 <script>
-  document.querySelector(".scroll-down-arrow").addEventListener("click", function () {
+  document.querySelector(".link").addEventListener("click", function () {
     document.querySelector("#target-section").scrollIntoView({ behavior: "smooth" });
   });
 </script>
 
 <style>
+  .link {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+  }
   .scroll-down-arrow {
     position: absolute;
     bottom: 70px;
