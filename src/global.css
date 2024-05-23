@@ -12,6 +12,7 @@ img {
 
 #wrapper {
   overflow-x: hidden;
+  position: relative;
 }
 
 :root {
