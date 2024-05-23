@@ -21,7 +21,11 @@ import Scroll from "../components/Scroll.astro";
         <img src="logo.svg" class="logo" />
         <h1>CAVEMAN STUDIO</h1>
       </a>
-      <h2 class="keywords">raw analog organic</h2>
+      <h2 class="keywords">
+        <span class="raw">raw</span>
+        <span class="analog"> analog </span>
+        <span class="organic"> organic </span>
+      </h2>
     </div>
     <Scroll />
   </section>
@@ -34,9 +38,13 @@ import Scroll from "../components/Scroll.astro";
     </center>
   </section>
   <Testimonials />
-  <Thestudio />
+  <div id="thestudio">
+    <Thestudio />
+  </div>
   <Newsletter />
-  <Aboutlucas />
+  <div id="aboutlucas">
+    <Aboutlucas />
+  </div>
   <Contactform />
   <Footer />
 </Layout>

@@ -66,6 +66,57 @@ body {
   text-decoration: none;
 }
 
+@keyframes rawfadeInSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes analogfadeInSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes organicfadeInSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.raw {
+  opacity: 0;
+  display: inline-block;
+  animation: rawfadeInSlideIn 1s ease-in-out forwards;
+}
+
+.analog {
+  opacity: 0;
+  display: inline-block;
+  animation: analogfadeInSlideIn 1s ease-in-out forwards;
+}
+
+.organic {
+  opacity: 0;
+  display: inline-block;
+  animation: organicfadeInSlideIn 1s ease-in-out forwards;
+}
+
 .logo {
   margin: 0 auto;
 }

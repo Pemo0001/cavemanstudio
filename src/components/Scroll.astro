@@ -3,8 +3,19 @@
 </div>
 
 <script>
+  // Delay showing the arrow
+  setTimeout(function () {
+    const arrow = document.querySelector(".scroll-down-arrow");
+    if (arrow) {
+      arrow.style.display = "block";
+    }
+  }, 1000);
+
   document.querySelector(".link").addEventListener("click", function () {
-    document.querySelector("#target-section").scrollIntoView({ behavior: "smooth" });
+    const targetSection = document.querySelector("#target-section");
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
   });
 </script>
 
@@ -22,7 +33,7 @@
     left: 48%;
     transform: translateX(-50%);
     cursor: pointer;
-    display: block;
+    display: none; /* Initially hide the arrow */
     width: 30px;
     height: 30px;
     border-bottom: 3px solid #ea8d55;
