@@ -3,7 +3,6 @@ import "../subpages.css";
 import Layout from "../layouts/Layout.astro";
 import Subpagemenu from "../components/Subpagemenu.astro";
 import Contactcard from "../components/Contactcard.astro";
-import Aboutlucasslider from "../components/Aboutlucasslider.astro";
 import Footer from "../components/Footer.astro";
 ---
 
@@ -24,8 +23,10 @@ import Footer from "../components/Footer.astro";
         <p class="quote">"I really enjoy listening, and creating, music with a wide variety of textures and sounds."</p>
       </div>
     </div>
-    <Aboutlucasslider />
-    <Contactcard />
+    <div class="lucasgrid_1_1">
+      <div class="grid_1_1"><img src="/lucas.jpg" /></div>
+      <div class="grid_1_1"><Contactcard /></div>
+    </div>
+    <Footer />
   </section>
-  <Footer />
 </Layout>

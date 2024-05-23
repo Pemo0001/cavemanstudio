@@ -52,11 +52,44 @@ ul li {
   letter-spacing: 0.05rem;
 }
 
+.imagegrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
 @media screen and (min-width: 880px) {
   .subpagegrid_1_1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 200px;
     padding: 0 3rem 0 3rem;
+  }
+
+  .lucasgrid_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 200px;
+    padding: 0 3rem 0 3rem;
+    margin-top: 5rem;
+  }
+
+  .imagegrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    padding: 0 3rem 0 3rem;
+    grid-auto-rows: min-content;
+    grid-auto-flow: dense;
+    margin-bottom: 5rem;
+  }
+
+  .taperecorder {
+    grid-column: 1 / span 2;
+    width: 100%;
+  }
+
+  .computer {
+    grid-column: 3 / span 1;
   }
 }
