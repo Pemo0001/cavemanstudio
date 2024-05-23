@@ -10,6 +10,10 @@ img {
   display: block;
 }
 
+#wrapper {
+  overflow-x: hidden;
+}
+
 :root {
   --primary: #ea8d55;
   --secondary: #1e1e1e;
