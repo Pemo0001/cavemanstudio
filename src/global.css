@@ -66,6 +66,17 @@ body {
   text-decoration: none;
 }
 
+.letstalklink {
+  position: absolute;
+  left: 30px;
+  top: 35px;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 0.3rem;
+  cursor: pointer;
+  z-index: 3;
+}
+
 @keyframes rawfadeInSlideIn {
   0% {
     opacity: 0;
