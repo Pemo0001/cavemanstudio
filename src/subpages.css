@@ -27,6 +27,10 @@
   margin: 0 auto 3rem auto;
 }
 
+.subpagesubtext a {
+  color: var(--primary);
+}
+
 .subpageh2 {
   font-family: "Helvetica Neue", sans-serif;
   font-weight: bold;
@@ -56,6 +60,13 @@ ul li {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.lucasgrid_1_1 {
+  font-size: 0.9rem;
+  font-style: italic;
 }
 
 @media screen and (min-width: 880px) {
