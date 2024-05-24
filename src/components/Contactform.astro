@@ -5,7 +5,7 @@ import Button from "./Button.astro";
 <section class="letstalk">
   <h2>LET'S TALK</h2>
   <p>I would love to listen to your songs! If you are interested in working with me please write me an email. Looking forward to hearing from you.</p>
-  <form name="Contactform" data-netlify="true" action="/submit_contact_form" method="post" enctype="multipart/form-data">
+  <form id="contactform" name="Contactform" data-netlify="true" method="post" enctype="multipart/form-data">
     <div class="forminputs">
       <input type="text" id="name" name="name" placeholder="Name" required />
       <input type="email" id="email" name="email" placeholder="Email" required />
@@ -21,106 +21,133 @@ import Button from "./Button.astro";
         <input id="file-upload" type="file" />
         <br />
         <Button variant="primary" type="submit">Send</Button>
+        <div id="thankyoucontactform" style="display: none;">Thank you. I'll get back to you ASAP!</div>
       </div>
     </div>
   </form>
+</section>
 
-  <style>
-    .letstalk {
-      background-image: url(/backgroundtexture.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      padding: 3rem;
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactform");
+    const thankYouMessage = document.getElementById("thankyoucontactform");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Optionally clear the form fields
+      form.reset();
+
+      // Display the thank you message
+      thankYouMessage.style.display = "block";
+    });
+  });
+</script>
+
+<style>
+  .letstalk {
+    background-image: url(/backgroundtexture.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3rem;
+  }
+
+  h2 {
+    color: var(--primary);
+    text-align: center;
+  }
+
+  p {
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+  }
+
+  input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+
+  form {
+    border: 2px solid var(--primary);
+    max-width: 1000px;
+    padding: 2rem;
+    margin: 0 auto;
+  }
+
+  .forminputs {
+    margin-bottom: 2rem;
+  }
+
+  textarea {
+    height: 300px;
+    width: 100%;
+    background: none;
+    border: 1px solid var(--primary);
+    color: #fff;
+    font-size: 1.1rem;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  .custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 2rem;
+    margin-bottom: -2rem;
+  }
+
+  .custom-file-upload img {
+    scale: calc(75%);
+  }
+
+  #file {
+    margin-top: 2rem;
+  }
+
+  input {
+    margin-right: 2rem;
+  }
+
+  #file {
+    width: 90%;
+  }
+
+  #thankyoucontactform {
+    color: #5bb05c;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: "Helvetica Neue", sans-serif;
+  }
+
+  @media only screen and (min-width: 880px) {
+    .formgrid {
+      display: grid;
+      grid-template-columns: 4fr 2fr;
+      gap: 2rem;
     }
 
-    h2 {
-      color: var(--primary);
-      text-align: center;
-    }
-
-    p {
-      max-width: 300px;
-      margin: 0 auto;
-      margin-bottom: 3rem;
-    }
-
-    input {
-      background: none;
-      border: none;
-      border-bottom: 1px solid var(--primary);
-      color: #fff;
-      margin-bottom: 1rem;
-      font-size: 1.1rem;
-    }
-
-    form {
-      border: 2px solid var(--primary);
-      max-width: 1000px;
-      padding: 2rem;
-      margin: 0 auto;
-    }
-
-    .forminputs {
-      margin-bottom: 2rem;
-    }
-
-    textarea {
+    .formbottomright {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       height: 300px;
-      width: 100%;
-      background: none;
-      border: 1px solid var(--primary);
-      color: #fff;
-      font-size: 1.1rem;
     }
 
-    input[type="file"] {
-      display: none;
+    #file {
+      margin-top: 8rem;
     }
 
     .custom-file-upload {
-      display: inline-block;
-      cursor: pointer;
-      margin-top: 2rem;
-      margin-bottom: -2rem;
+      margin-top: 10rem;
     }
-
-    .custom-file-upload img {
-      scale: calc(75%);
-    }
-
-    #file {
-      margin-top: 2rem;
-    }
-
-    input {
-      margin-right: 2rem;
-    }
-
-    #file {
-      width: 90%;
-    }
-
-    @media only screen and (min-width: 880px) {
-      .formgrid {
-        display: grid;
-        grid-template-columns: 4fr 2fr;
-        gap: 2rem;
-      }
-
-      .formbottomright {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 300px;
-      }
-
-      #file {
-        margin-top: 8rem;
-      }
-
-      .custom-file-upload {
-        margin-top: 10rem;
-      }
-    }
-  </style>
-</section>
+  }
+</style>

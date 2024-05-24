@@ -5,7 +5,7 @@ import Button from "./Button.astro";
 <section class="newsletter">
   <h2>FRIENDS?</h2>
   <p>Sign up to my newsletter to get info about projects and new releases. Don’t worry, no spam :)</p>
-  <form name="Newsletter sign-up" data-netlify="true" action="/submit_form" method="post">
+  <form id="newsletter" name="Newsletter sign-up" data-netlify="true" method="post">
     <div class="forminputs">
       <input type="text" id="name" name="name" placeholder="Name" required />
       <input type="email" id="email" name="email" placeholder="Email" required />
@@ -13,8 +13,26 @@ import Button from "./Button.astro";
     <div class="formbutton">
       <Button class="signupbutton" type="submit" variant="primary">SIGN UP!</Button>
     </div>
+    <div id="thankyounewsletter" style="display: none;">Thanks friend!</div>
   </form>
 </section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("newsletter");
+    const thankYouMessage = document.getElementById("thankyounewsletter");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Optionally clear the form fields
+      form.reset();
+
+      // Display the thank you message
+      thankYouMessage.style.display = "block";
+    });
+  });
+</script>
 
 <style>
   .newsletter {
@@ -49,5 +67,15 @@ import Button from "./Button.astro";
     color: #fff;
     margin: 3rem 3rem 1rem 3rem;
     font-size: 1.1rem;
+  }
+
+  #thankyounewsletter {
+    color: #5bb05c;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: "Helvetica Neue", sans-serif;
+    margin-top: 1rem;
   }
 </style>
