@@ -76,7 +76,10 @@ import Button from "./Button.astro";
   }
 
   input[type="file"] {
-    display: none;
+    clip-path: inset(0 0 0 70px);
+    position: relative;
+    right: 70px;
+    font-size: 0.8rem;
   }
 
   .custom-file-upload {
@@ -121,7 +124,7 @@ import Button from "./Button.astro";
     }
 
     .custom-file-upload {
-      margin-top: 10rem;
+      margin-top: 6rem;
     }
   }
 </style>
