@@ -56,7 +56,6 @@ body:before {
   height: 100%;
   z-index: -10;
   background: rgb(230, 138, 84);
-  background: linear-gradient(180deg, rgba(230, 138, 84, 1) 57%, rgba(212, 103, 63, 1) 100%);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -89,6 +88,10 @@ body:before {
   letter-spacing: 0.3rem;
   cursor: pointer;
   z-index: 0;
+}
+
+.circleflex {
+  display: none;
 }
 
 @keyframes rawfadeInSlideIn {
@@ -186,5 +189,55 @@ h2 {
 @media only screen and (min-width: 880px) {
   .frontpagecontent {
     scale: calc(100%);
+  }
+
+  .circleflex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -6rem;
+  }
+
+  .circleleft {
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    background-color: var(--secondary);
+    position: relative;
+    bottom: 75.5px;
+    left: 50px;
+    clip-path: inset(75px 0 0 0);
+  }
+
+  .circleright {
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    background-color: var(--primary);
+    position: relative;
+    bottom: 74.5px;
+    right: 50px;
+    clip-path: inset(0 0 75px 0);
+  }
+
+  .circleleft2 {
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    background-color: var(--primary);
+    position: relative;
+    bottom: 21.5px;
+    left: 50px;
+    clip-path: inset(75px 0 0 0);
+  }
+
+  .circleright2 {
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    background-color: var(--secondary);
+    position: relative;
+    bottom: 21px;
+    right: 50px;
+    clip-path: inset(0 0 75px 0);
   }
 }
