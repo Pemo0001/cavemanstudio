@@ -5,7 +5,7 @@ import Button from "./Button.astro";
 <section class="letstalk">
   <h2>LET'S TALK</h2>
   <p>I would love to listen to your songs! If you are interested in working with me please write me an email. Looking forward to hearing from you.</p>
-  <form action="/submit_contact_form" method="post" enctype="multipart/form-data">
+  <form name="Contactform" data-netlify="true" action="/submit_contact_form" method="post" enctype="multipart/form-data">
     <div class="forminputs">
       <input type="text" id="name" name="name" placeholder="Name" required />
       <input type="email" id="email" name="email" placeholder="Email" required />

@@ -4,8 +4,8 @@ import Button from "./Button.astro";
 
 <section class="newsletter">
   <h2>FRIENDS?</h2>
-  <p>Sign-up to my newsletter to get info about projects and new releases. Don’t worry, no spam :)</p>
-  <form action="/submit_form" method="post">
+  <p>Sign up to my newsletter to get info about projects and new releases. Don’t worry, no spam :)</p>
+  <form name="Newsletter sign-up" data-netlify="true" action="/submit_form" method="post">
     <div class="forminputs">
       <input type="text" id="name" name="name" placeholder="Name" required />
       <input type="email" id="email" name="email" placeholder="Email" required />
