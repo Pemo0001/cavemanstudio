@@ -23,28 +23,12 @@ import Button from "./Button.astro";
         <input id="file-upload" type="file" />
         <br />
         <Button variant="primary" type="submit">Send</Button>
-        <div id="thankyoucontactform" style="display: none;">Thank you. I'll get back to you ASAP!</div>
       </div>
     </div>
   </form>
 </section>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contactform");
-    const thankYouMessage = document.getElementById("thankyoucontactform");
-
-    form.addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent the default form submission
-
-      // Optionally clear the form fields
-      form.reset();
-
-      // Display the thank you message
-      thankYouMessage.style.display = "block";
-    });
-  });
-
   const actualBtn = document.getElementById("file-upload");
 
   const fileChosen = document.getElementById("chosenfile");
@@ -127,15 +111,6 @@ import Button from "./Button.astro";
 
   #file {
     width: 90%;
-  }
-
-  #thankyoucontactform {
-    color: #5bb05c;
-    font-weight: bold;
-    padding: 0.5rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-family: "Helvetica Neue", sans-serif;
   }
 
   #chosenfile {
