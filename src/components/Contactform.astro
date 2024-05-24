@@ -17,7 +17,8 @@ import Button from "./Button.astro";
       </div>
       <div class="formbottomright">
         <div class="space"></div>
-        <input type="file" id="file" name="file" />
+        <label for="file-upload" class="custom-file-upload"><img src="/attachfile.svg" alt="attachfile" /><p>Add file</p></label>
+        <input id="file-upload" type="file" />
         <br />
         <Button variant="primary" type="submit">Send</Button>
       </div>
@@ -72,8 +73,19 @@ import Button from "./Button.astro";
       font-size: 1.1rem;
     }
 
-    .formgrid {
-      text-align: center;
+    input[type="file"] {
+      display: none;
+    }
+
+    .custom-file-upload {
+      display: inline-block;
+      cursor: pointer;
+      margin-top: 2rem;
+      margin-bottom: -2rem;
+    }
+
+    .custom-file-upload img {
+      scale: calc(75%);
     }
 
     #file {
@@ -82,6 +94,10 @@ import Button from "./Button.astro";
 
     input {
       margin-right: 2rem;
+    }
+
+    #file {
+      width: 90%;
     }
 
     @media only screen and (min-width: 880px) {
@@ -100,6 +116,10 @@ import Button from "./Button.astro";
 
       #file {
         margin-top: 8rem;
+      }
+
+      .custom-file-upload {
+        margin-top: 10rem;
       }
     }
   </style>
