@@ -46,10 +46,21 @@ a {
   font-family: "Helvetica Neue";
 }
 
-body {
-  background: rgb(234, 141, 85);
-  background: linear-gradient(180deg, rgba(234, 141, 85, 1) 53%, rgba(213, 109, 72, 1) 100%);
-  background-attachment: fixed;
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background: rgb(230, 138, 84);
+  background: linear-gradient(180deg, rgba(230, 138, 84, 1) 57%, rgba(212, 103, 63, 1) 100%);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .frontpage {
