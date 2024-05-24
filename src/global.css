@@ -48,7 +48,7 @@ a {
 
 body {
   background: rgb(234, 141, 85);
-  background: linear-gradient(180deg, rgba(234, 141, 85, 1) 44%, rgba(129, 76, 45, 1) 76%);
+  background: linear-gradient(180deg, rgba(234, 141, 85, 1) 53%, rgba(213, 109, 72, 1) 100%);
   background-attachment: fixed;
   height: 150vh;
 }
