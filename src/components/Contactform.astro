@@ -20,23 +20,13 @@ import Button from "./Button.astro";
         <label for="file-upload" class="custom-file-upload"><img src="/attachfile.svg" alt="attachfile" /><p>Add file</p></label>
         <br />
         <span id="chosenfile">No file chosen</span>
-        <input id="file-upload" type="file" />
+        <input id="file-upload" name="file" type="file" />
         <br />
         <Button variant="primary" type="submit">Send</Button>
       </div>
     </div>
   </form>
 </section>
-
-<script>
-  const actualBtn = document.getElementById("file-upload");
-
-  const fileChosen = document.getElementById("chosenfile");
-
-  actualBtn.addEventListener("change", function () {
-    fileChosen.textContent = this.files[0].name;
-  });
-</script>
 
 <style>
   .letstalk {
