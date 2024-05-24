@@ -19,7 +19,6 @@ import Button from "./Button.astro";
         <div class="space"></div>
         <label for="file-upload" class="custom-file-upload"><img src="/attachfile.svg" alt="attachfile" /><p>Add file</p></label>
         <br />
-        <span id="chosenfile">No file chosen</span>
         <input id="file-upload" name="file" type="file" />
         <br />
         <Button variant="primary" type="submit">Send</Button>
@@ -101,13 +100,6 @@ import Button from "./Button.astro";
 
   #file {
     width: 90%;
-  }
-
-  #chosenfile {
-    color: #fff;
-    font-family: "Helvetica Neue", sans-serif;
-    font-size: 0.8rem;
-    margin-top: -10px;
   }
 
   @media only screen and (min-width: 880px) {
