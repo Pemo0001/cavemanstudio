@@ -18,6 +18,8 @@ import Button from "./Button.astro";
       <div class="formbottomright">
         <div class="space"></div>
         <label for="file-upload" class="custom-file-upload"><img src="/attachfile.svg" alt="attachfile" /><p>Add file</p></label>
+        <br />
+        <span id="chosenfile">No file chosen</span>
         <input id="file-upload" type="file" />
         <br />
         <Button variant="primary" type="submit">Send</Button>
@@ -41,6 +43,14 @@ import Button from "./Button.astro";
       // Display the thank you message
       thankYouMessage.style.display = "block";
     });
+  });
+
+  const actualBtn = document.getElementById("file-upload");
+
+  const fileChosen = document.getElementById("chosenfile");
+
+  actualBtn.addEventListener("change", function () {
+    fileChosen.textContent = this.files[0].name;
   });
 </script>
 
@@ -126,6 +136,13 @@ import Button from "./Button.astro";
     border-radius: 20px;
     font-size: 0.8rem;
     font-family: "Helvetica Neue", sans-serif;
+  }
+
+  #chosenfile {
+    color: #fff;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 0.8rem;
+    margin-top: -10px;
   }
 
   @media only screen and (min-width: 880px) {
