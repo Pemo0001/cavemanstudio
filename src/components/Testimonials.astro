@@ -15,9 +15,18 @@ import Button from "./Button.astro";
 
 <script>
   const testimonials = [
-    { text: "Lucas works well with references but also has a creative and engaging ear beyond that.", author: "Nora Quinn" },
-    { text: "We have always felt inspired and safe working with Lucas.", author: "Maria & Thomas, When Moons Align" },
-    { text: "His homely bunker-turned-studio is the perfect safe space to let your songs grow into records.", author: "Emil Jantzen, Tidemand" },
+    {
+      text: "Lucas works well with references but also has a creative and engaging ear beyond that.",
+      author: "Nora Quinn",
+    },
+    {
+      text: "We have always felt inspired and safe working with Lucas.",
+      author: "Maria & Thomas, When Moons Align",
+    },
+    {
+      text: "His homely bunker-turned-studio is the perfect safe space to let your songs grow into records.",
+      author: "Emil Jantzen, Tidemand",
+    },
   ];
   let currentTestimonial = 0;
 
@@ -40,12 +49,14 @@ import Button from "./Button.astro";
   }
 
   function prevTestimonial() {
-    currentTestimonial = currentTestimonial === 0 ? testimonials.length - 1 : currentTestimonial - 1;
+    currentTestimonial =
+      currentTestimonial === 0 ? testimonials.length - 1 : currentTestimonial - 1;
     showTestimonial();
   }
 
   function nextTestimonial() {
-    currentTestimonial = currentTestimonial === testimonials.length - 1 ? 0 : currentTestimonial + 1;
+    currentTestimonial =
+      currentTestimonial === testimonials.length - 1 ? 0 : currentTestimonial + 1;
     showTestimonial();
   }
 
@@ -60,7 +71,7 @@ import Button from "./Button.astro";
 
 <style>
   .testimonials {
-    background-image: url(backgroundtexture.jpg);
+    background-image: url(/backgroundtexture.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
