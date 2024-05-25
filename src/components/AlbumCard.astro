@@ -1,0 +1,36 @@
+---
+import "../global.css";
+
+const { data } = Astro.props;
+---
+
+<a href={`${data.slug}`} data-type={data.type} class="cardWrapper">
+  <article class="slider-item">
+    <div class="img-div">
+      <img src={data.image} alt="artwork" />
+    </div>
+    <h3>{data.name}</h3>
+  </article>
+</a>
+
+<style>
+  .cardWrapper {
+    text-decoration: none;
+  }
+
+  .slider-item {
+    overflow: hidden;
+    margin-right: 30px;
+  }
+
+  .img-div {
+    width: 300px;
+    height: 300px;
+  }
+
+  h3 {
+    text-decoration: none;
+    color: var(--secondary);
+    font-size: 30px;
+  }
+</style>
