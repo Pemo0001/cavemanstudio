@@ -1,0 +1,93 @@
+---
+import "../global.css";
+import Layout from "../layouts/Layout.astro";
+import Burgermenu from "../components/Burgermenu.astro";
+
+export async function getStaticPaths() {
+  const data = await fetch("https://rlorrsagultuatdyhvhu.supabase.co/rest/v1/Albums", {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsb3Jyc2FndWx0dWF0ZHlodmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYyODc3ODYsImV4cCI6MjAzMTg2Mzc4Nn0.CvkZ1QH0hJYE5KmLRdBhGr7F__KopLbjDVRkV8lk3gs",
+    },
+  }).then((res) => res.json());
+
+  return data.map((Artwork) => {
+    return {
+      params: { slug: Artwork.slug },
+      props: { myData: Artwork },
+    };
+  });
+}
+
+const { myData } = Astro.props;
+
+// console.log(myData);
+---
+
+<Layout title={myData.name}>
+  <Burgermenu />
+
+  <h1>"{myData.name}"</h1>
+  <section class="grid_1-1">
+    <img src={myData.image} alt="Album artwork" />
+    <div>
+      <h2>{myData.name}</h2>
+      <p class="info">{myData.info}</p>
+      <br />
+      <p>{myData.mixed_recorded_produced}</p>
+      <p>{myData.mastered}</p>
+      <iframe
+        style="border-radius:12px"
+        src={myData.spotify}
+        width="100%"
+        height="152"
+        frameBorder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      >
+      </iframe>
+    </div>
+    <p>An album by {myData.artist}</p>
+  </section>
+</Layout>
+
+<script>
+  document.querySelector(".info").textContent = myData.info.replaceAll(";", " / ");
+</script>
+
+<style>
+  h1 {
+    color: var(--accent1);
+  }
+  h2 {
+    color: var(--primary);
+  }
+
+  p {
+    color: var(--accent1);
+    font-size: 1.5rem;
+  }
+
+  body {
+    background-color: var(--secondary);
+    margin: 0 150px;
+  }
+
+  @media (min-width: 800px) {
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    iframe {
+      margin-top: 50px;
+    }
+  }
+</style>

@@ -3,6 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import Burgermenu from "../components/Burgermenu.astro";
 import Slider from "../components/Slider.astro";
 import Testimonials from "../components/Testimonials.astro";
+
+const data = await fetch("https://rlorrsagultuatdyhvhu.supabase.co/rest/v1/Albums", {
+  method: "GET",
+  headers: {
+    apikey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsb3Jyc2FndWx0dWF0ZHlodmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYyODc3ODYsImV4cCI6MjAzMTg2Mzc4Nn0.CvkZ1QH0hJYE5KmLRdBhGr7F__KopLbjDVRkV8lk3gs",
+  },
+}).then((res) => res.json());
+
+console.log(data);
 ---
 
 <Layout title="Caveman Studio">
@@ -18,7 +28,16 @@ import Testimonials from "../components/Testimonials.astro";
     <h2 class="recentprojectstitle">Recent projects</h2>
     <Slider />
     <center>
-      <iframe class="spotifyplaylist" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xGMxzRKGeCj?utm_source=generator&theme=0" width="75%" height="500" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe
+        class="spotifyplaylist"
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1E4xGMxzRKGeCj?utm_source=generator&theme=0"
+        width="75%"
+        height="500"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
     </center>
   </section>
   <section class="testimonials">
