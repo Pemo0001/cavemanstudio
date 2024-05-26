@@ -1,7 +1,9 @@
 ---
 import "../global.css";
 import Layout from "../layouts/Layout.astro";
-import Burgermenu from "../components/Burgermenu.astro";
+import Subpagemenu from "../components/Subpagemenu.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/Button.astro";
 
 export async function getStaticPaths() {
   const data = await fetch("https://rlorrsagultuatdyhvhu.supabase.co/rest/v1/Albums", {
@@ -25,62 +27,80 @@ const { myData } = Astro.props;
 ---
 
 <Layout title={myData.name}>
-  <Burgermenu />
-  <div class="main">
-    <h1>"{myData.name}"</h1>
-    <section class="grid_1-1">
-      <img src={myData.image} alt="Album artwork" />
-      <div>
-        <h2>{myData.name}</h2>
-        <p class="info">{myData.info}</p>
-        <br />
-        <p>{myData.mixed_recorded_produced}</p>
-        <p>{myData.mastered}</p>
-        <iframe style="border-radius:12px" src={myData.spotify} width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"> </iframe>
+  <Subpagemenu />
+  <section class="subpagealbum">
+    <section class="album">
+      <h1>"{myData.name}"</h1>
+      <div class="grid_1-1">
+        <img src={myData.image} alt="Album artwork" />
+        <div>
+          <h2>{myData.name}</h2>
+          <p class="info">{myData.info}</p>
+          <br />
+          <p>{myData.mixed_recorded_produced}</p>
+          <p>{myData.mastered}</p>
+          <iframe style="border-radius:12px" src={myData.spotify} width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"> </iframe>
+        </div>
+        <p>An album by {myData.artist}</p>
       </div>
-      <p>An album by {myData.artist}</p>
+      <Button class="backbutton" variant="primary"><a class="back" href="javascript:history.back()">BACK</a> </Button>
     </section>
-  </div>
+  </section>
+  <Footer class="footer" />
+
+  <script>
+    document.querySelector(".info").textContent = myData.info.replaceAll(";", " / ");
+  </script>
+
+  <style>
+    h1 {
+      color: var(--accent1);
+      font-size: 3rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+    h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+
+    p {
+      color: var(--accent1);
+      font-size: 1rem;
+    }
+
+    body::before {
+      background-color: var(--secondary);
+    }
+
+    .album {
+      margin: 4rem 10% 6rem 10%;
+    }
+
+    .back {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .subpagealbum {
+      border-bottom: 1px solid var(--primary);
+    }
+
+    @media (min-width: 800px) {
+      .grid_1-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      iframe {
+        margin-top: 50px;
+      }
+    }
+  </style>
 </Layout>
-
-<script>
-  document.querySelector(".info").textContent = myData.info.replaceAll(";", " / ");
-</script>
-
-<style>
-  h1 {
-    color: var(--accent1);
-  }
-  h2 {
-    color: var(--primary);
-  }
-
-  p {
-    color: var(--accent1);
-    font-size: 1.5rem;
-  }
-
-  body::before {
-    background-color: var(--secondary);
-  }
-
-  .main {
-    margin: 0 150px;
-  }
-
-  @media (min-width: 800px) {
-    .grid_1-1 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-    }
-
-    img {
-      width: 100%;
-    }
-
-    iframe {
-      margin-top: 50px;
-    }
-  }
-</style>
