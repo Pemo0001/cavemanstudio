@@ -1,5 +1,6 @@
 ---
 import Button from "./Button.astro";
+const { link } = Astro.props;
 ---
 
 <section class="thestudio">
@@ -10,7 +11,7 @@ import Button from "./Button.astro";
     <div class="gridright">
       <h2>THE STUDIO</h2>
       <p>Caveman Studio is located in a cozy, underground bunker in Copenhagen. This intimate setup is ideal for diving intro the creative process.</p>
-      <Button variant="secondary"><a href="thestudio.html">READ MORE</a></Button>
+      <a href={link}><Button variant="secondary">READ MORE</Button></a>
     </div>
   </div>
 </section>

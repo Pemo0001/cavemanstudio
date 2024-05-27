@@ -1,5 +1,6 @@
 ---
 import Button from "./Button.astro";
+const { link } = Astro.props;
 ---
 
 <div class="card">
@@ -9,7 +10,7 @@ import Button from "./Button.astro";
     <p>I would love to listen to your songs! If you are interested in working with me please write me an email.</p>
     <br />
     <p>Looking forward to hearing from you.</p>
-    <Button variant="secondary"><a href="/letstalk.html">LET'S TALK</a></Button>
+    <a href={link}><Button variant="secondary">LET'S TALK</Button></a>
   </div>
 </div>
 

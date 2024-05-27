@@ -3,14 +3,13 @@ import "../global.css";
 import Layout from "../layouts/Layout.astro";
 import Subpagemenu from "../components/Subpagemenu.astro";
 import Footer from "../components/Footer.astro";
-import Button from "../components/Button.astro";
+import Backbutton from "../components/Backbutton.astro";
 
 export async function getStaticPaths() {
   const data = await fetch("https://rlorrsagultuatdyhvhu.supabase.co/rest/v1/Albums", {
     method: "GET",
     headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsb3Jyc2FndWx0dWF0ZHlodmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYyODc3ODYsImV4cCI6MjAzMTg2Mzc4Nn0.CvkZ1QH0hJYE5KmLRdBhGr7F__KopLbjDVRkV8lk3gs",
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsb3Jyc2FndWx0dWF0ZHlodmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYyODc3ODYsImV4cCI6MjAzMTg2Mzc4Nn0.CvkZ1QH0hJYE5KmLRdBhGr7F__KopLbjDVRkV8lk3gs",
     },
   }).then((res) => res.json());
 
@@ -40,82 +39,70 @@ const { myData } = Astro.props;
           <br />
           <p>{myData.mixed_recorded_produced}</p>
           <p>{myData.mastered}</p>
-          <iframe
-            style="border-radius:12px"
-            src={myData.spotify}
-            width="100%"
-            height="152"
-            frameBorder="0"
-            allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
-          >
-          </iframe>
+          <iframe style="border-radius:12px" src={myData.spotify} width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"> </iframe>
         </div>
         <p>An album by {myData.artist}</p>
       </div>
-      <Button class="backbutton" variant="primary"
-        ><a class="back" href="javascript:history.back()">BACK</a>
-      </Button>
+      <Backbutton link="javascript:history.back()" />
     </section>
+    <Footer class="footer" />
+
+    <script>
+      let infoBOX = document.querySelector(".info");
+
+      infoBOX.innerHTML = infoBOX.innerHTML.replaceAll(";", "<br>");
+    </script>
+
+    <style>
+      h1 {
+        color: var(--accent1);
+        font-size: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
+      h2 {
+        color: var(--primary);
+        font-size: 2rem;
+        margin-top: 2rem;
+      }
+
+      p {
+        color: var(--accent1);
+        font-size: 1rem;
+      }
+
+      body::before {
+        background-color: var(--secondary);
+      }
+
+      .album {
+        margin: 4rem 10% 6rem 10%;
+      }
+
+      .back {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .subpagealbum {
+        border-bottom: 1px solid var(--primary);
+      }
+
+      @media (min-width: 800px) {
+        .grid_1-1 {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 50px;
+        }
+
+        img {
+          width: 100%;
+        }
+
+        iframe {
+          margin-top: 50px;
+        }
+      }
+    </style>
   </section>
-  <Footer class="footer" />
-
-  <script>
-    let infoBOX = document.querySelector(".info");
-
-    infoBOX.innerHTML = infoBOX.innerHTML.replaceAll(";", "<br>");
-  </script>
-
-  <style>
-    h1 {
-      color: var(--accent1);
-      font-size: 3rem;
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-    }
-    h2 {
-      color: var(--primary);
-      font-size: 2rem;
-      margin-top: 2rem;
-    }
-
-    p {
-      color: var(--accent1);
-      font-size: 1rem;
-    }
-
-    body::before {
-      background-color: var(--secondary);
-    }
-
-    .album {
-      margin: 4rem 10% 6rem 10%;
-    }
-
-    .back {
-      text-decoration: none;
-      color: #fff;
-    }
-
-    .subpagealbum {
-      border-bottom: 1px solid var(--primary);
-    }
-
-    @media (min-width: 800px) {
-      .grid_1-1 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-      }
-
-      img {
-        width: 100%;
-      }
-
-      iframe {
-        margin-top: 50px;
-      }
-    }
-  </style>
 </Layout>
