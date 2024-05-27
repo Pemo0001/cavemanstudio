@@ -10,6 +10,7 @@ const { data } = Astro.props;
       <img src={data.image} alt="artwork" />
     </div>
     <h3>{data.name}</h3>
+    <p>By {data.artist}</p>
   </article>
 </a>
 
@@ -31,6 +32,14 @@ const { data } = Astro.props;
   h3 {
     text-decoration: none;
     color: var(--secondary);
-    font-size: 30px;
+    font-size: 1.6rem;
+    margin-top: 0.4rem;
+  }
+
+  p {
+    color: var(--secondary);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1;
   }
 </style>
