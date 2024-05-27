@@ -14,8 +14,7 @@ import Scroll from "../components/Scroll.astro";
 const data = await fetch("https://rlorrsagultuatdyhvhu.supabase.co/rest/v1/Albums", {
   method: "GET",
   headers: {
-    apikey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsb3Jyc2FndWx0dWF0ZHlodmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYyODc3ODYsImV4cCI6MjAzMTg2Mzc4Nn0.CvkZ1QH0hJYE5KmLRdBhGr7F__KopLbjDVRkV8lk3gs",
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJsb3Jyc2FndWx0dWF0ZHlodmh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYyODc3ODYsImV4cCI6MjAzMTg2Mzc4Nn0.CvkZ1QH0hJYE5KmLRdBhGr7F__KopLbjDVRkV8lk3gs",
   },
 }).then((res) => res.json());
 ---
@@ -46,14 +45,7 @@ const data = await fetch("https://rlorrsagultuatdyhvhu.supabase.co/rest/v1/Album
     <h2 class="recentprojectstitle">Recent projects</h2>
     <Slider />
     <center>
-      <iframe
-        class="spotifyplaylist"
-        style="border-radius:12px"
-        src="https://open.spotify.com/embed/playlist/3Uln3VaLIA1LP0FmWMdKl8?utm_source=generator&theme=0"
-        width="75%"
-        height="500"
-        frameborder="0"
-        loading="lazy"></iframe>
+      <iframe class="spotifyplaylist" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3Uln3VaLIA1LP0FmWMdKl8?utm_source=generator&theme=0" width="75%" height="500" frameborder="0" loading="lazy"></iframe>
     </center>
   </section>
   <div class="circleflex">

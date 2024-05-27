@@ -90,6 +90,7 @@ body:before {
   z-index: 0;
 }
 
+
 .circleflex {
   display: none;
 }
@@ -240,4 +241,9 @@ h2 {
     right: 50px;
     clip-path: inset(0 0 75px 0);
   }
+  .letstalklink a:hover {
+color: var(--accent1);
+  cursor: pointer;
+  z-index: 0;
+}
 }

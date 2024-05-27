@@ -49,14 +49,12 @@ import Button from "./Button.astro";
   }
 
   function prevTestimonial() {
-    currentTestimonial =
-      currentTestimonial === 0 ? testimonials.length - 1 : currentTestimonial - 1;
+    currentTestimonial = currentTestimonial === 0 ? testimonials.length - 1 : currentTestimonial - 1;
     showTestimonial();
   }
 
   function nextTestimonial() {
-    currentTestimonial =
-      currentTestimonial === testimonials.length - 1 ? 0 : currentTestimonial + 1;
+    currentTestimonial = currentTestimonial === testimonials.length - 1 ? 0 : currentTestimonial + 1;
     showTestimonial();
   }
 
@@ -66,7 +64,7 @@ import Button from "./Button.astro";
   showTestimonial();
 
   // Automatic slide
-  setInterval(nextTestimonial, 5500); // Change slide every 3 seconds
+  setInterval(nextTestimonial, 8500); // Change slide every 3 seconds
 </script>
 
 <style>
