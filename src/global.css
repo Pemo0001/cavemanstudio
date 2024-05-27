@@ -241,9 +241,18 @@ h2 {
     right: 50px;
     clip-path: inset(0 0 75px 0);
   }
+  .letstalklink {
+  position: absolute;
+  left: 30px;
+  top: 35px;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 0.3rem;
+  cursor: pointer;
+  z-index: 999;
+}
   .letstalklink a:hover {
 color: var(--accent1);
   cursor: pointer;
-  z-index: 0;
 }
 }
