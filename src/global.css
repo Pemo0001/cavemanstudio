@@ -219,7 +219,8 @@ h2 {
     height: 150px;
     width: 150px;
     border-radius: 75px;
-    background-color: var(--primary);
+    background: rgb(230, 138, 84);
+    background: linear-gradient(180deg, rgba(230, 138, 84, 1) 57%, rgba(212, 103, 63, 1) 100%);
     position: relative;
     bottom: 74.5px;
     right: 50px;
