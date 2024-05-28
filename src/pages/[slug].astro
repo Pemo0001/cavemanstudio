@@ -30,6 +30,9 @@ const { myData } = Astro.props;
 <Layout title={myData.name}>
   <Subpagemenu />
   <section class="subpagealbum">
+    <div class="backbutton">
+      <a class="back" href="javascript:history.back()"><center>&lt; BACK</center></a>
+    </div>
     <section class="album">
       <h1>"{myData.name}"</h1>
       <div class="grid_1-1">
@@ -44,7 +47,6 @@ const { myData } = Astro.props;
         </div>
         <p>An album by {myData.artist}</p>
       </div>
-      <Backbutton link="javascript:history.back()" />
     </section>
   </section>
   <Footer class="footer" />
@@ -59,7 +61,7 @@ const { myData } = Astro.props;
     h1 {
       color: var(--accent1);
       font-size: 3rem;
-      margin-top: 3rem;
+      padding-top: 3rem;
       margin-bottom: 3rem;
     }
     h2 {
@@ -73,21 +75,16 @@ const { myData } = Astro.props;
       font-size: 1rem;
     }
 
-    body::before {
-      background-color: var(--secondary);
-    }
-
     .album {
-      margin: 4rem 10% 6rem 10%;
-    }
-
-    .back {
-      text-decoration: none;
-      color: #fff;
+      margin: -2rem 10% 6rem 10%;
     }
 
     .subpagealbum {
       border-bottom: 1px solid var(--primary);
+    }
+
+    .backbutton {
+      padding-top: 3rem;
     }
 
     @media (min-width: 800px) {
