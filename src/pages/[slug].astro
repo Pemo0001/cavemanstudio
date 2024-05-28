@@ -45,64 +45,64 @@ const { myData } = Astro.props;
       </div>
       <Backbutton link="javascript:history.back()" />
     </section>
-    <Footer class="footer" />
-
-    <script>
-      let infoBOX = document.querySelector(".info");
-
-      infoBOX.innerHTML = infoBOX.innerHTML.replaceAll(";", "<br>");
-    </script>
-
-    <style>
-      h1 {
-        color: var(--accent1);
-        font-size: 3rem;
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-      }
-      h2 {
-        color: var(--primary);
-        font-size: 2rem;
-        margin-top: 2rem;
-      }
-
-      p {
-        color: var(--accent1);
-        font-size: 1rem;
-      }
-
-      body::before {
-        background-color: var(--secondary);
-      }
-
-      .album {
-        margin: 4rem 10% 6rem 10%;
-      }
-
-      .back {
-        text-decoration: none;
-        color: #fff;
-      }
-
-      .subpagealbum {
-        border-bottom: 1px solid var(--primary);
-      }
-
-      @media (min-width: 800px) {
-        .grid_1-1 {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 50px;
-        }
-
-        img {
-          width: 100%;
-        }
-
-        iframe {
-          margin-top: 50px;
-        }
-      }
-    </style>
   </section>
+  <Footer class="footer" />
+
+  <script>
+    let infoBOX = document.querySelector(".info");
+
+    infoBOX.innerHTML = infoBOX.innerHTML.replaceAll(";", "<br>");
+  </script>
+
+  <style>
+    h1 {
+      color: var(--accent1);
+      font-size: 3rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+    h2 {
+      color: var(--primary);
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+
+    p {
+      color: var(--accent1);
+      font-size: 1rem;
+    }
+
+    body::before {
+      background-color: var(--secondary);
+    }
+
+    .album {
+      margin: 4rem 10% 6rem 10%;
+    }
+
+    .back {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .subpagealbum {
+      border-bottom: 1px solid var(--primary);
+    }
+
+    @media (min-width: 800px) {
+      .grid_1-1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      iframe {
+        margin-top: 50px;
+      }
+    }
+  </style>
 </Layout>
