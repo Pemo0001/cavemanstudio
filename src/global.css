@@ -90,9 +90,18 @@ body:before {
   z-index: 0;
 }
 
-
 .circleflex {
   display: none;
+}
+
+video {
+  max-width: 100%;
+}
+
+.video {
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 2rem;
 }
 
 @keyframes rawfadeInSlideIn {
@@ -242,17 +251,21 @@ h2 {
     clip-path: inset(0 0 75px 0);
   }
   .letstalklink {
-  position: absolute;
-  left: 30px;
-  top: 35px;
-  color: var(--primary);
-  text-decoration: none;
-  letter-spacing: 0.3rem;
-  cursor: pointer;
-  z-index: 999;
-}
+    position: absolute;
+    left: 30px;
+    top: 35px;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: 0.3rem;
+    cursor: pointer;
+    z-index: 999;
+  }
   .letstalklink a:hover {
-color: var(--accent1);
-  cursor: pointer;
-}
+    color: var(--accent1);
+    cursor: pointer;
+  }
+
+  .video {
+    max-width: 93%;
+  }
 }
