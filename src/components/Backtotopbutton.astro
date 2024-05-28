@@ -2,9 +2,9 @@
 
 ---
 
-<button id="circle">
+<div id="circle">
   <button id="backToTopBtn" title="Go to top"></button>
-</button>
+</div>
 
 <script>
   // CHAT GPT
@@ -41,9 +41,9 @@
     border-radius: 60%;
     position: relative;
     margin-top: 3rem;
+    cursor: pointer;
   }
   #backToTopBtn {
-    display: none; /* Hidden by default */
     background-color: var(--primary);
     z-index: 99; /* Make sure it does not overlap */
     cursor: pointer; /* Add a mouse pointer on hover */
