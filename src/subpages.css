@@ -4,6 +4,11 @@
   border-bottom: 1px solid var(--primary);
 }
 
+.subpagealbum {
+  background-color: var(--secondary);
+  border-bottom: 1px solid var(--primary);
+}
+
 .back {
   text-decoration: none;
   color: #6a5142;
