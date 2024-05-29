@@ -64,6 +64,8 @@ body:before {
   height: 965.5px;
   background-image: url("heroimage-cleaned.jpg");
   background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .frontpagecontent {
