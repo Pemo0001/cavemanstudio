@@ -29,7 +29,7 @@
 
 .subpagesubtext {
   max-width: 450px;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 4rem auto;
 }
 
 .subpagesubtext a {
@@ -46,7 +46,7 @@
 }
 
 .quote {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-style: italic;
   font-weight: bold;
   line-height: 2.4rem;
@@ -108,4 +108,7 @@ ul li {
   .computer {
     grid-column: 3 / span 1;
   }
+.subpageheader {
+margin-bottom: 1rem;
+}
 }

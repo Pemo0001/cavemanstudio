@@ -45,7 +45,7 @@ import Button from "./Button.astro";
 
       testimonialElem.classList.add("active");
       authorElem.classList.add("active");
-    }, 500); // Match the duration of the CSS transition
+    }, 500);
   }
 
   function prevTestimonial() {
@@ -63,8 +63,7 @@ import Button from "./Button.astro";
 
   showTestimonial();
 
-  // Automatic slide
-  setInterval(nextTestimonial, 8500); // Change slide every 3 seconds
+  setInterval(nextTestimonial, 10500);
 </script>
 
 <style>
