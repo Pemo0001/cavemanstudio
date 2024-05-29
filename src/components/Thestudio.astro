@@ -6,11 +6,14 @@ const { link } = Astro.props;
 <section class="thestudio">
   <div class="thestudiogrid">
     <div class="gridleft">
-      <img src="/thestudio.jpg" alt="thestudio" />
+      <a href={link}><img src="/thestudio.jpg" alt="thestudio" /></a>
     </div>
     <div class="gridright">
       <h2>THE STUDIO</h2>
-      <p>Caveman Studio is located in a cozy, underground bunker in Copenhagen. This intimate setup is ideal for diving intro the creative process.</p>
+      <p>
+        Caveman Studio is located in a cozy, underground bunker in Copenhagen. This intimate setup
+        is ideal for diving intro the creative process.
+      </p>
       <a href={link}><Button variant="secondary">READ MORE</Button></a>
     </div>
   </div>
