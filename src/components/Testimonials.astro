@@ -4,12 +4,12 @@ import Button from "./Button.astro";
 
 <section class="testimonials">
   <div class="testimonial-container">
-    <button id="prev-btn"><img src="backbutton.svg" /></button>
+    <button id="previous"><img src="backbutton.svg" alt="previous" /></button>
     <div class="testimonialflex">
       <h3 id="testimonial" class="slide"></h3>
       <p id="author" class="slide"></p>
     </div>
-    <button id="next-btn"><img src="forwardbutton.svg" /></button>
+    <button id="next"><img src="forwardbutton.svg" alt="next" /></button>
   </div>
 </section>
 
@@ -32,8 +32,8 @@ import Button from "./Button.astro";
 
   const testimonialElem = document.getElementById("testimonial");
   const authorElem = document.getElementById("author");
-  const prevBtn = document.getElementById("prev-btn");
-  const nextBtn = document.getElementById("next-btn");
+  const prevBtn = document.getElementById("previous");
+  const nextBtn = document.getElementById("next");
 
   function showTestimonial() {
     testimonialElem.classList.remove("active");
@@ -95,19 +95,19 @@ import Button from "./Button.astro";
   #author {
     font-size: 1rem;
   }
-  #prev-btn,
-  #next-btn {
+  #previous,
+  #next {
     border: none;
     text-decoration: none;
     cursor: pointer;
     scale: calc(50%);
   }
 
-  #next-btn {
+  #next {
     margin-left: auto;
   }
 
-  #prev-btn {
+  #prev {
     margin-right: auto;
   }
 
