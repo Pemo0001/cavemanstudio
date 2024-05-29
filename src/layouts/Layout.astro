@@ -1,11 +1,27 @@
 ---
 import "../global.css";
 const { title } = Astro.props;
+
+import { getImage } from "astro:assets";
+import faviconSrc from "../../public/favicon.png";
+import faviconSvgSrc from "../../public/favicon.svg";
+
+const appleTouchIcon = await getImage({
+  src: faviconSrc,
+  width: 180,
+  height: 180,
+  format: "png",
+});
+const faviconSvg = await getImage({ src: faviconSvgSrc, format: "svg" });
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href={faviconSvg.src} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={appleTouchIcon.src} />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="description" content="Caveman Studio is a recording studio in Copenhagen, Denmark run by Lucas Delacroix" />
     <meta charset="UTF-8" />
