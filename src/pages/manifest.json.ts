@@ -23,7 +23,7 @@ export const GET: APIRoute = async () => {
 
   const manifest = {
     name: "Caveman Studio",
-    description: "Caveman Studio is a recording studio in Copenhagen, Denmark run by Lucas Delacroix",
+    description: "Caveman Studio is a recording studio in Copenhagen, Denmark, run by Lucas Delacroix",
     start_url: "/",
     display: "standalone",
     id: "cavemanstudio",
